@@ -1,0 +1,20 @@
+1	3550308	São Paulo
+2	3304557	Rio de Janeiro
+3	5300108	Brasíliaal
+4	2927408	Salvador00
+5	2304400	Fortaleza1
+6	3106200	Belo Horizonte
+7	1302603	Manaus
+8	4106902	Curitiba
+9	2611606	Recife
+10	5208707	Goiânia
+11	1501402	Belém
+12	4314902	Porto Alegre
+13	3518800	Guarulhos
+14	3509502	Campinas
+15	2111300	São Luís
+16	3304904	São Gonçalo
+17	2704302	Maceió
+18	3301702	Duque de Caxias
+19	5002704	Campo Grande Sul
+20	2408102	Natal
