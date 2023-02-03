@@ -1,4 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:convert';
+
 class UserTypes {
   final String id;
   final String userId;
@@ -17,6 +19,22 @@ class UserTypes {
       name: map['name'] ?? '',
     );
   }
+
+  factory UserTypes.fromJson(String source) =>
+      UserTypes.fromMap(jsonDecode(source));
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'userId': userId,
+      'name': name,
+    };
+  }
+
+  String toJson() => jsonEncode(toMap());
+
+  @override
+  String toString() => 'UserTypes(id: $id, userId: $userId, name: $name)';
 }
 
 // {

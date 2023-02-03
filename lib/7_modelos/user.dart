@@ -1,3 +1,6 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:convert';
+
 import 'package:dart_async/7_modelos/user_types.dart';
 
 class User {
@@ -18,14 +21,31 @@ class User {
       id: map['id'] ?? '',
       name: map['name'] ?? '',
       userName: map['username'] ?? '',
-      userTypes: map['user_types']?.map((type) {
+      userTypes: map['user_types']?.map<UserTypes>((type) {
+            // Type = Map<String, dynamic>
             return UserTypes.fromMap(type);
           }).toList() ??
-          [],
+          <UserTypes>[],
     );
   }
 
-  // continuar aula 18:20
+  factory User.fromJson(String source) => User.fromMap(jsonDecode(source));
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'name': name,
+      'username': userName,
+      'user_types': userTypes.map((e) => e.toMap()).toList(),
+    };
+  }
+
+  String toJson() => jsonEncode(toMap());
+
+  @override
+  String toString() {
+    return 'User(id: $id, name: $name, userName: $userName, userTypes: $userTypes)';
+  }
 }
 
 
